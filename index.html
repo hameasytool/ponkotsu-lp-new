@@ -65,6 +65,8 @@
 
   /* Etsy紹介 */
   .etsy-shop{border-radius:var(--radius);box-shadow:var(--shadow);width:100%;max-width:520px;margin:0 auto;display:block}
+  .etsy-video{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);max-width:520px;margin:0 auto;line-height:0}
+  .etsy-video video{width:100%;height:auto;display:block}
   .soon{margin:26px auto 0;text-align:center;background:rgba(255,255,255,.72);border:2px dashed var(--brand-deep);border-radius:var(--radius);padding:22px 20px;max-width:440px;backdrop-filter:blur(3px)}
   .soon-badge{display:inline-block;background:var(--brand-deep);color:#fff;border-radius:999px;padding:6px 16px;font-size:13px;font-weight:700;margin-bottom:10px;letter-spacing:.05em}
   .soon h3{font-size:17px;margin-bottom:4px}
@@ -201,7 +203,7 @@
   <div class="wrap">
     <h2><span class="crayon" style="--cc:#86c1ec">実は、Etsyもやってます🎨</span></h2>
     <p class="lead">海外向けに、レトロでかわいいクリップアートを作っています。<br>商用利用OK・高解像度で、世界中の人に使ってもらっています🐹</p>
-    <img class="etsy-shop" src="images/etsy-shop.jpg" alt="はむのEtsyクリップアート商品いろいろ">
+    <div class="etsy-video"><video src="images/etsy-slideshow.mp4" autoplay muted loop playsinline preload="metadata"></video></div>
     <div class="soon">
       <span class="soon-badge">🚀 COMING SOON…</span>
       <h3>Etsyクリップアート全自動化ツール</h3>
@@ -235,7 +237,7 @@
     if(!vid) return;
     var soundBtn=document.getElementById('soundBtn');
     var clips=[];
-    for(var i=1;i<=11;i++){ clips.push('images/clip'+i+'.mp4'); }
+    for(var i=1;i<=18;i++){ clips.push('images/clip'+i+'.mp4'); }
     var idx=Math.floor(Math.random()*clips.length); /* 毎回ちがう動画から */
     function play(){ var p=vid.play(); if(p&&p.catch){p.catch(function(){});} }
     function load(){ vid.src=clips[idx]; vid.load(); play(); }
