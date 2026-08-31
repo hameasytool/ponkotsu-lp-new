@@ -12,7 +12,7 @@
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;700&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#fffdf7; --surface:#ffffff; --ink:#4a3b42; --ink-soft:#8a7a82;
@@ -29,9 +29,9 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   html,body{overflow-x:hidden}
-  body{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;color:var(--ink);background:linear-gradient(rgba(255,255,255,.28),rgba(255,255,255,.28)) center/cover fixed,url('images/sky.jpg') center/cover fixed,#bcd9f0;line-height:1.95;font-size:16px;font-weight:500;-webkit-font-smoothing:antialiased}
+  body{font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;color:var(--ink);background:linear-gradient(rgba(255,255,255,.28),rgba(255,255,255,.28)) center/cover fixed,url('images/sky.jpg') center/cover fixed,#bcd9f0;line-height:1.95;font-size:16px;font-weight:500;-webkit-font-smoothing:antialiased}
   /* 見出し＝かわいい丸フォント（Kaisei Decol）／本文＝読みやすい丸ゴシック */
-  h1,h2,h3,.cta,.chip,.badge{font-family:"Kaisei Decol","Zen Maru Gothic",sans-serif;font-weight:700}
+  h1,h2,h3,.cta,.chip,.badge{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800}
   img,video{max-width:100%;height:auto;display:block}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
   section{padding:56px 0}
@@ -68,11 +68,25 @@
   .etsy-video{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);max-width:520px;margin:0 auto;line-height:0}
   .etsy-video video{width:100%;height:auto;display:block}
   .soon{margin:26px auto 0;text-align:center;background:rgba(255,255,255,.72);border:2px solid #bfe0f7;border-radius:var(--radius);padding:22px 20px;max-width:440px;backdrop-filter:blur(3px)}
-  .tool-btn{display:inline-block;margin-top:16px;font-family:"Kaisei Decol","Zen Maru Gothic",sans-serif;font-weight:700;font-size:15px;text-decoration:none;color:#4d4550;background:linear-gradient(135deg,#c3e4f8,#e6d8f7);padding:13px 28px;border-radius:999px;border:2px solid #fff;box-shadow:0 8px 20px rgba(120,150,200,.28);transition:transform .18s ease,box-shadow .18s ease}
+  .tool-btn{display:inline-block;margin-top:16px;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:15px;text-decoration:none;color:#4d4550;background:linear-gradient(135deg,#c3e4f8,#e6d8f7);padding:13px 28px;border-radius:999px;border:2px solid #fff;box-shadow:0 8px 20px rgba(120,150,200,.28);transition:transform .18s ease,box-shadow .18s ease}
   .tool-btn:hover{transform:translateY(-3px);box-shadow:0 14px 26px rgba(120,150,200,.36)}
+  .soon.yt{border-color:#ffc9c6;margin-top:16px}
+  .yt-badge{background:#f4726f}
+  .yt-btn{background:linear-gradient(135deg,#ffd2cf,#ffe6dc);box-shadow:0 8px 20px rgba(230,140,130,.28)}
+  .yt-btn:hover{box-shadow:0 14px 26px rgba(230,140,130,.36)}
+  /* 画像そのものをCTAにする */
+  .img-cta{display:block;position:relative;margin-top:6px;border-radius:16px;overflow:hidden;box-shadow:0 10px 26px rgba(90,120,170,.22);transition:transform .18s ease,box-shadow .18s ease}
+  .img-cta:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(90,120,170,.3)}
+  .img-cta img{width:100%;display:block}
+  .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;background:rgba(244,114,111,.94);border-radius:50%;box-shadow:0 4px 14px rgba(0,0,0,.28)}
+  .yt-play::after{content:"";position:absolute;top:50%;left:55%;transform:translate(-50%,-50%);border-style:solid;border-width:11px 0 11px 19px;border-color:transparent transparent transparent #fff}
+  .yt-cap{display:inline-block;margin-top:12px;font-size:13px;color:var(--ink-soft);font-weight:700;text-decoration:none;transition:color .15s ease}
+  .yt-cap:hover{color:var(--brand-deep)}
   .soon-badge{display:inline-block;background:var(--brand-deep);color:#fff;border-radius:999px;padding:6px 16px;font-size:13px;font-weight:700;margin-bottom:10px;letter-spacing:.05em}
   .soon h3{font-size:17px;margin-bottom:4px}
   .soon p{font-size:14px;color:var(--ink-soft)}
+  .tool-desc{margin-bottom:16px;line-height:1.85}
+  .tool-desc b{color:#4d4550;font-weight:800}
   .soon .date{color:var(--brand-deep);font-weight:700}
 
   /* 参加 */
@@ -112,7 +126,7 @@
   .movie-wrap{position:relative;z-index:1;width:clamp(260px,88vw,460px);margin:0 auto}
   .sound-btn{position:absolute;bottom:12px;right:12px;width:40px;height:40px;padding:0;border:none;border-radius:50%;background:rgba(255,255,255,.85);box-shadow:0 4px 12px rgba(90,120,170,.28);font-size:18px;line-height:40px;text-align:center;cursor:pointer;z-index:6;transition:transform .15s ease}
   .sound-btn:hover{transform:scale(1.08)}
-  .bk-caption{font-family:"Zen Maru Gothic",sans-serif;color:#5c6a86;font-size:clamp(13px,3.6vw,15.5px);line-height:1.9;margin-top:16px;text-shadow:0 1px 3px rgba(255,255,255,.95)}
+  .bk-caption{font-family:"M PLUS Rounded 1c",sans-serif;color:#5c6a86;font-size:clamp(13px,3.6vw,15.5px);line-height:1.9;margin-top:16px;text-shadow:0 1px 3px rgba(255,255,255,.95)}
 
   /* 手書き「あ、いた。」（動画の上に） */
   .handnote{position:absolute;z-index:5;font-family:"Yomogi",cursive;color:#fff;font-size:clamp(13px,3.8vw,18px);top:8px;right:12px;opacity:0;transform:translateY(6px) rotate(-6deg);transition:opacity .5s ease 1s,transform .5s ease 1s;pointer-events:none;text-shadow:0 1px 5px rgba(0,0,0,.55)}
@@ -209,8 +223,19 @@
     <div class="soon">
       <span class="soon-badge">✨ 完成しました！</span>
       <h3>Etsyクリップアート全自動化ツール</h3>
-      <p>クリップアート制作を、まるっと自動に🐹</p>
-      <a class="tool-btn" href="https://cliparttoolkitpro.vercel.app/" target="_blank" rel="noopener">ツールを見てみる →</a>
+      <p class="tool-desc">Etsy出品に必要な<b>サムネ画像</b>や<b>モックアップ</b>（商品イメージ写真）を、クリップアートからまるっと自動生成🐹<br>面倒な画像づくりが、数クリックで完成します。</p>
+      <a class="img-cta" href="https://cliparttoolkitpro.vercel.app/" target="_blank" rel="noopener" aria-label="Clipart Toolkit Pro を見る">
+        <img src="images/tool-banner.jpg" alt="Etsyクリップアート全自動化ツール Clipart Toolkit Pro">
+      </a>
+      <a class="yt-cap" href="https://cliparttoolkitpro.vercel.app/" target="_blank" rel="noopener">▶ タップでツールへ🐹</a>
+    </div>
+    <div class="soon yt">
+      <span class="soon-badge yt-badge">🎬 YouTubeはじめました！</span>
+      <a class="img-cta" href="https://www.youtube.com/@humstar.kirakira" target="_blank" rel="noopener" aria-label="はむのYouTubeチャンネルを見る">
+        <img src="images/youtube-thumb.jpg" alt="Youtubeはじめました！ はむ（2児の母）現役Etsyセラー">
+        <span class="yt-play"></span>
+      </a>
+      <a class="yt-cap" href="https://www.youtube.com/@humstar.kirakira" target="_blank" rel="noopener">▶ タップでチャンネルへ🐹</a>
     </div>
   </div>
 </section>
